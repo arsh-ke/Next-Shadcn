@@ -19,12 +19,20 @@ A fully responsive, dark/light theme dashboard interface built with a modern UI 
 It features analytics charts, project & task management, transaction lists, an admin panel, and more.
 🖼 Screenshots
 Dark Theme
-
 (Dashboard, Analytics, Reports, Admin Panel)
-(https://github.com/arsh-ke/Next-Shadcn/blob/main/public%2Fimages%2FSC-1.png)
-/screenshots/dark-analytics.png
-/screenshots/dark-reports.png
-/screenshots/dark-admin.png
+<h1>Admin Dashboard</h1>
+
+![Dashboard](public/images/SC-1.png).
+![](public/images/SD-2.png).
+<h1>Analytics</h1>
+
+![](public/images/SC-3.png).
+<h1>admin Report</h1>
+
+![](public/images/SC-4.png).
+<h1>Admin Panel </h1>
+
+![](public/images/SD-5.png)
 
 
 <h1>🚀 Features</h1>
@@ -33,7 +41,7 @@ Dark Theme
 Switch seamlessly between light and dark mode with a single toggle.
 Light Theme
 
-/screenshots/light-dashboard.png
+![](public/SC-6.png)
 
 
 📈 Analytics & Reports
