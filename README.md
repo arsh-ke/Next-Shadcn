@@ -21,7 +21,7 @@ It features analytics charts, project & task management, transaction lists, an a
 Dark Theme
 
 (Dashboard, Analytics, Reports, Admin Panel)
-(public/images/SC-1.png)
+(https://github.com/arsh-ke/Next-Shadcn/blob/main/public%2Fimages%2FSC-1.png)
 /screenshots/dark-analytics.png
 /screenshots/dark-reports.png
 /screenshots/dark-admin.png
