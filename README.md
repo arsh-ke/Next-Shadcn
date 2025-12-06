@@ -22,17 +22,17 @@ Dark Theme
 (Dashboard, Analytics, Reports, Admin Panel)
 <h1>Admin Dashboard</h1>
 
-![Dashboard](public/images/SC-1.png).
-![](public/images/SD-2.png).
+![Dashboard](./SC-1.png).
+![](./Sc-3.png)
 <h1>Analytics</h1>
 
-![](public/images/SC-3.png).
+![](./Sc-4.png).
 <h1>admin Report</h1>
 
-![](public/images/SC-4.png).
+![](./Sc-5.png).
 <h1>Admin Panel </h1>
 
-![](public/images/SD-5.png)
+![](./Sc-6.png)
 
 
 <h1>🚀 Features</h1>
