@@ -5,6 +5,7 @@ import {
   SheetDescription,
   SheetHeader,
   SheetTitle,
+  
 } from "@/components/ui/sheet";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -46,7 +47,7 @@ const EditUser = () => {
       username: "john.doe",
       email: "john.doe@gmail.com",
       phone: "+1 234 5678",
-      location: "New York, NY",
+      location: "New York, NY" ,
       role: "admin",
     },
   });

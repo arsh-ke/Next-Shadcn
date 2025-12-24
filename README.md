@@ -112,3 +112,41 @@ LocalStorage / Context API	Theme & UI state management
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+---
+
+## Auth & Database setup 🔐
+
+1. Install dependencies:
+
+```bash
+pnpm add @prisma/client next-auth bcrypt
+pnpm add -D prisma
+```
+
+2. Copy `.env.example` to `.env` and set `NEXTAUTH_SECRET`.
+
+3. Generate Prisma client and run the initial migration:
+
+```bash
+pnpm prisma:generate
+pnpm prisma:migrate
+```
+
+4. Create a dev user (optional):
+
+```bash
+# Use a script or a DB UI like Prisma Studio
+pnpm prisma studio
+```
+
+5. Run the dev server:
+
+```bash
+pnpm dev
+```
+
+Visit `/register` and `/login` to try the auth flow.
+
+---
+
+

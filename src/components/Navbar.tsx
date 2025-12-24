@@ -14,10 +14,12 @@ import {
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
 import { SidebarTrigger, useSidebar } from "./ui/sidebar";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const { toggleSidebar } = useSidebar();
+  const { data: session, status } = useSession();
   return (
     <nav className="p-4 flex items-center justify-between sticky top-0 bg-background z-10">
       {/* LEFT */}
@@ -49,31 +51,45 @@ const Navbar = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        {/* USER MENU */}
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Avatar>
-              <AvatarImage src="https://avatars.githubusercontent.com/u/1486366" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent sideOffset={10}>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <User className="h-[1.2rem] w-[1.2rem] mr-2" />
-              Profile
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Settings className="h-[1.2rem] w-[1.2rem] mr-2" />
-              Settings
-            </DropdownMenuItem>
-            <DropdownMenuItem variant="destructive">
-              <LogOut className="h-[1.2rem] w-[1.2rem] mr-2" />
-              Logout
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        {/* AUTH MENU */}
+        {status === "loading" ? (
+          <div>Loading...</div>
+        ) : session?.user ? (
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Avatar>
+                {session.user.image ? (
+                  <AvatarImage src={session.user.image} />
+                ) : (
+                  <AvatarFallback>
+                    {session.user.name ? session.user.name.slice(0, 2) : "U"}
+                  </AvatarFallback>
+                )}
+              </Avatar>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent sideOffset={10}>
+              <DropdownMenuLabel>{session.user.name ?? session.user.email}</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <User className="h-[1.2rem] w-[1.2rem] mr-2" />
+                Profile
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => signOut()}>
+                <LogOut className="h-[1.2rem] w-[1.2rem] mr-2" />
+                Logout
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        ) : (
+          <div className="flex gap-2">
+            <Link href="/login">
+              <Button>Login</Button>
+            </Link>
+            <Link href="/register">
+              <Button variant="outline">Register</Button>
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );
